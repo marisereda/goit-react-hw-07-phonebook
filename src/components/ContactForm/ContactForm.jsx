@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Formik, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { nanoid } from 'nanoid';
-import { saveContact, selectContacts } from 'redux/contactsSlice';
+import { selectContacts } from 'redux/contactsSlice';
 import { Box } from 'components/Box';
 import { ErrorText, InputTitle, Input, Button } from './ContactForm.styled';
+import { addContact } from 'redux/operations';
 
 const initialValues = {
   name: '',
@@ -25,7 +25,7 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
 
   // --------------------------------
-  const addContact = ({ name, number }) => {
+  const saveContact = ({ name, number }) => {
     const seekingName = name.toLowerCase().trim();
     const foundContact = contacts.find(
       contact => contact.name.toLowerCase().trim() === seekingName
@@ -36,17 +36,16 @@ export const ContactForm = () => {
     }
 
     const newContact = {
-      id: nanoid(),
       name: name.trim(),
-      number: number.trim(),
+      phone: number.trim(),
     };
 
-    dispatch(saveContact(newContact));
+    dispatch(addContact(newContact));
   };
 
   // --------------------------------
   const handleSumbmit = (values, { resetForm }) => {
-    addContact({
+    saveContact({
       name: values.name,
       number: values.number,
     });
