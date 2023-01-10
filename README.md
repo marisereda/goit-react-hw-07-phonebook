@@ -18,4 +18,4 @@ The project demonstrates the use of Redux-toolkit library in async queries.
 - MockAPI
 
 The live Phonebook page is
-[here](https://marisereda.github.io/goit-react-hw-07-phonebook/).
+[here](https://marisereda.github.io/goit-react-hw-06-phonebook/).
