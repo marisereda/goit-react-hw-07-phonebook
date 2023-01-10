@@ -11,7 +11,6 @@ The project demonstrates the use of Redux-toolkit library in async queries.
 
 - React
 - Redux-toolkit
--
 - Styled-system
 - Styled components
 - Formik library
