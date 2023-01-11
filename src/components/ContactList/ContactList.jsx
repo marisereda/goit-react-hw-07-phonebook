@@ -13,11 +13,11 @@ export const ContactList = () => {
   // let firstRendering = useRef(true);
 
   // --------------------------------
+  // if (firstRendering.current) {
+  //   firstRendering.current = false;
+  //   return;
+  // }
   useEffect(() => {
-    // if (firstRendering.current) {
-    //   firstRendering.current = false;
-    //   return;
-    // }
     dispatch(fetchContacts());
   }, [dispatch]);
 
