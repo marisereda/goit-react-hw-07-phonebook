@@ -10,13 +10,8 @@ export const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const filterValue = useSelector(selectFilter);
   const dispatch = useDispatch();
-  // let firstRendering = useRef(true);
 
   // --------------------------------
-  // if (firstRendering.current) {
-  //   firstRendering.current = false;
-  //   return;
-  // }
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
