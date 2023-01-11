@@ -15,10 +15,10 @@ export const ContactList = () => {
   // --------------------------------
   useEffect(() => {
     if (firstRendering.current) {
-      dispatch(fetchContacts());
       firstRendering.current = false;
       return;
     }
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   // --------------------------------
